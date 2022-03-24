@@ -75,7 +75,7 @@ Groups_creation()
   groupadd Usuarios_CC
   usermod -a -G Usuarios_CC usu1,
   for i in {3..5}; do
-    usermod -a -G Usuarios_CC usu3,usu4,usu5
+    usermod -a -G Usuarios_CC usu$i
   done
   
   groupadd Ejecutivos_CC
@@ -83,7 +83,7 @@ Groups_creation()
 
   groupadd Usuarios_Parque
   for i in {5..6}; do
-    usermod -a -G Usuarios_Parque usu5,usu6
+    usermod -a -G Usuarios_Parque usu$i
   done
   
   groupadd Ejecutivos_Parque
@@ -205,6 +205,6 @@ if [ "$(whoami)" == "root" ]; then
   Compilation_ls
   echo
 else 
-  echo "Para ejecutar el script tienes que ser root"
+  echo "${TEXT_BOLD}${TEXT_RED}Para ejecutar el script tienes que ser root${TEXT_RESET}"
   exit 0
 fi
