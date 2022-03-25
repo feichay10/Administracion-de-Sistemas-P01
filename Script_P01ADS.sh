@@ -73,7 +73,7 @@ Groups_creation()
   done
 
   groupadd Usuarios_CC
-  usermod -a -G Usuarios_CC usu1,
+  usermod -a -G Usuarios_CC usu1
   for i in {3..5}; do
     usermod -a -G Usuarios_CC usu$i
   done
